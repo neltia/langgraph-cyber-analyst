@@ -6,3 +6,6 @@ data/
 db/
 *.db
 *.sqlite3
+
+# logs
+report_*.json
